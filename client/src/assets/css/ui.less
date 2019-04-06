@@ -1,0 +1,257 @@
+/**
+ * ui.less
+ * 根据《今日头条控件规范》(https://wiki.bytedance.com/pages/viewpage.action?pageId=31395143)完成
+ * 分为 字(word-w)、线(line-l)、面(plane-p) 三部分，各有夜间模式
+ */
+
+@bordercolor: #e8e8e8;
+
+/* word */
+.word1 {
+  color: #333;
+  .night & {
+    color: #707070;
+  }
+}
+.word2 {
+  color: #505050;
+  .night & {
+    color: #707070;
+  }
+}
+.word3 {
+  color: #999999;
+  .night & {
+    color: #707070;
+  }
+}
+.word4 {
+  color: #f85959;
+  .night & {
+    color: #935656;
+  }
+}
+.word5 {
+  color: #406599;
+  .night & {
+    color: #67778b;
+  }
+}
+.word6 {
+  color: #2a90d7;
+  .night & {
+    color: #67778b;
+  }
+}
+.word7 {
+  color: #ffffff;
+  .night & {
+    color: #252525;
+  }
+}
+.word8 {
+  color: #ffffff;
+  .night & {
+    color: #ffffff;
+  }
+}
+.word9 {
+  color: #cacaca;
+  .night & {
+    color: #707070;
+  }
+}
+.word10 {
+  color: #ffffff;
+  .night & {
+    color: #707070;
+  }
+}
+.word12 {
+  color: #ffffff;
+  .night & {
+    color: #cacaca;
+  }
+}
+.word13 {
+  color: #979fac;
+  .night & {
+    color: #707070;
+  }
+}
+.word14 {
+  color: #707070;
+  .night & {
+    color: #707070;
+  }
+}
+
+// .word-active1 { color: #f85959; }
+// .word-active2 { color: #2a90d7; }
+// .word-active3 { color: #ffffff; }
+// .word-active4 { color: #999999; }
+
+// .word-disabled1 { color: #999999; }
+// .word-disabled2 { color: #ffffff; }
+
+// .night {
+
+//     .word-active1 { color: #935656; }
+//     .word-active2 { color: #67778b; }
+//     .word-active3 { color: #252525; }
+//     .word-active4 { color: #707070; }
+
+//     .word-disabled1 { color: #707070; }
+//     .word-disabled2 { color: #252525; }
+// }
+
+/* line */
+.line1 { color: #e8e8e8; }
+
+.night {
+  .line1 { color: #464646; }
+}
+
+/* plane */
+.plane1  {
+  background-color: #e0e0e0;
+  .night & {
+    background-color: #1b1b1b;
+  }
+}
+.plane2  {
+  background-color: #e8e8e8;
+  .night & {
+    background-color: #1b1b1b;
+  }
+}
+.plane3  {
+  background-color: #f4f5f6;
+  .night & {
+    background-color: #1b1b1b;
+  }
+}
+.plane4  {
+  background-color: #ffffff;
+  .night & {
+    background-color: #252525;
+  }
+}
+.plane5  {
+  background-color: #000000;
+  .night & {
+    background-color: #000000;
+  }
+}
+.plane6  {
+  background-color: #999999;
+  .night & {
+    background-color: #707070;
+  }
+}
+.plane7  {
+  background-color: #f85959;
+  .night & {
+    background-color: #935656;
+  }
+}
+.plane8  {
+  background-color: #2a90d7;
+  .night & {
+    background-color: #67778b;
+  }
+}
+.plane9  {
+  background-color: rgba(0,0,0,.3);
+  .night & {
+    background-color: rgba(0,0,0,.3);
+  }
+}
+.plane10 {
+  background-color: #f6f5f4;
+  .night & {
+    background-color: #252525;
+  }
+}
+.plane11 {
+  background-color: rgba(0,0,0,.9);
+  .night & {
+    background-color: rgba(0,0,0,.9);
+  }
+}
+.plane12 {
+  background-color: rgba(255,255,255,.9);
+  .night & {
+    background-color: rgba(255,255,255,.9);
+  }
+}
+.plane13 {
+  background-color: rgba(42,144,215,.5);
+  .night & {
+    background-color: rgba(103,119,139,.5);
+  }
+}
+.plane14 {
+  background-color: rgba(255,255,255,.96);
+  .night & {
+    background-color: #252525;
+  }
+}
+.plane15 {
+  background-color: rgba(0,0,0,.5);
+  .night & {
+    background-color: rgba(0,0,0,.5);
+  }
+}
+.plane16 {
+  background-color: rgba(0,0,0,.15);
+  .night & {
+    background-color: rgba(0,0,0,.15);
+  }
+}
+.plane17 {
+  background-color: #ffffff;
+  .night & {
+    background-color: #707070;
+  }
+}
+.plane21 {
+  background-color: #f8f8f8;
+  .night & {
+    background-color: #252525;
+  }
+}
+
+// .plane-active1  { background-color: #f85959; }
+// .plane-active2  { background-color: #2a90d7; }
+// .plane-active3  { background-color: #ffffff; }
+// .plane-active4  { background-color: rgba(0,0,0,.5); }
+
+// .plane-disabled1 { background-color: #999999; }
+
+// .night {
+//     .plane1  { background-color: #1b1b1b; }
+//     .plane2  { background-color: #1b1b1b; }
+//     .plane3  { background-color: #1b1b1b; }
+//     .plane4  { background-color: #252525; }
+//     .plane5  { background-color: #000000; }
+//     .plane6  { background-color: #707070; }
+//     .plane7  { background-color: #935656; }
+//     .plane8  { background-color: #67778b; }
+//     .plane9  { background-color: rgba(0,0,0,.3); }
+//     .plane10 { background-color: #252525; }
+//     .plane11 { background-color: rgba(0,0,0,.9); }
+//     .plane12 { background-color: rgba(255,255,255,.9); }
+//     .plane13 { background-color: rgba(103,119,139,.5); }
+//     .plane14 { background-color: #252525; }
+//     .plane15 { background-color: rgba(0,0,0,.5); }
+//     .plane16 { background-color: rgba(0,0,0,.15); }
+//     .plane17 { background-color: #707070; }
+
+//     .plane-active1  { background-color: #935656; }
+//     .plane-active2  { background-color: #67778b; }
+//     .plane-active3  { background-color: #252525; }
+//     .plane-active4  { background-color: rgba(0,0,0,.5); }
+
+//     .plane-disabled1 { background-color: #707070; }
+// }

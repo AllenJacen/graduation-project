@@ -1,3 +1,4 @@
+const path = require('path');
 const config = {
   projectName: 'myApp',
   date: '2019-3-13',
@@ -32,6 +33,11 @@ const config = {
     options: {
     }
   },
+  alias:{
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+    '@/widgets': path.resolve(__dirname, '..', 'src/widgets')
+  },
   weapp: {
     module: {
       postcss: {
@@ -54,7 +60,7 @@ const config = {
         url: {
           enable: true,
           config: {
-            limit: 10240 // 设定转换尺寸上限
+            limit: 2048000 // 设定转换尺寸上限
           }
         },
         cssModules: {
@@ -70,6 +76,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     module: {
       postcss: {
         autoprefixer: {

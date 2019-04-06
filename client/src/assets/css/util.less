@@ -1,0 +1,117 @@
+@bordercolor : #e6e6e6;
+
+.rotate360() {
+  animation: rotate360 1s linear infinite;
+}
+
+.hide() {
+  display: block;
+}
+.clearfix() {
+  &::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+  }
+}
+
+.wordline(@line) {
+  overflow: hidden;
+  -webkit-line-clamp: @line;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+// 左右边距  x::after {.borderonepx(top,#eee,0,0)}
+.borderonepx(@type,@color: @bordercolor, @left: 0,@right: 0,@px: 1px) {
+  position: absolute;
+  left: @left;
+  right: @right;
+  content: '';
+  height: 1px;
+  & when(@type = top) and (@px = 1px) {
+    top: 0;
+    border-top: @px solid @color;
+    transform-origin: 0 0;
+    transform: scaleY(.5);
+  }
+  & when(@type = bottom) and (@px = 1px) {
+    bottom: 0;
+    border-bottom: @px solid @color;
+    transform-origin: 0 0;
+    transform: scaleY(.5);
+  }
+  & when(@type = bottom) {
+    bottom: -1px;
+    border-bottom: @px solid @color;
+  }
+  & when(@type = top) {
+    top: 0;
+    border-top: @px solid @color;
+  }
+  & when(@type = all) {
+    box-sizing: border-box;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    border: 1px solid @color;
+    transform-origin: 0 0;
+    transform: scale(.5,.5);
+  }
+  .night & {
+    border-color: #464646;
+  }
+}
+
+.one-pixel-border-base {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        content: "";
+        transform-origin: 0 0;
+        pointer-events: none;
+
+        @media (min-resolution: 2dppx) {
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+        }
+
+        @media (min-resolution: 3dppx) {
+            width: 300%;
+            height: 300%;
+            transform: scale(0.333333);
+        }
+    }
+}
+
+.one-pixel-border (@color, @borderwidth: 1px, @borderradius: 0) {
+    &:extend(.one-pixel-border-base all);
+
+    border-radius: @borderradius;
+
+    &::after {
+        border-width: @borderwidth;
+        border-style: solid;
+        border-radius: @borderradius;
+        border-color: @color;
+
+        @media (min-resolution: 2dppx) {
+            border-radius: @borderradius * 2;
+        }
+
+        @media (min-resolution: 3dppx) {
+            border-radius: @borderradius * 3;
+        }
+    }
+}

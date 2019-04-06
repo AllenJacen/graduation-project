@@ -1,6 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text ,Input } from '@tarojs/components'
-import './index.less'
+import { AtCountdown, AtCalendar } from 'taro-ui'
+import { IndexBar } from '@/widgets/IndexBar/index'
+import './index.scss'
 
 export default class Index extends Component {
 
@@ -18,60 +20,32 @@ export default class Index extends Component {
       inputVal: ''
     }
   }
+  //对应 wxapp 的 onLaunch
+  //监听程序初始化，初始化完成时触发（全局只触发一次）
   componentWillMount () { }
-
+  //对应 app 的 onLaunch，在 componentWillMount 后执行
+  //监听程序初始化，初始化完成时触发（全局只触发一次)
   componentDidMount () { }
 
   componentWillUnmount () { }
 
+  //对应 onShow
+  //程序启动，或从后台进入前台显示时触发
   componentDidShow () { }
-
+  //对应 onHide
+  //程序从前台进入后台时触发
   componentDidHide () { }
 
-  addItem () {
-    let { list } = this.state
-    const inputVal = this.inputVal
-    if (inputVal == '') return
-    else{
-      list.push(inputVal)
-    }
-    let clearVal = (this.state.inputVal == null ? '' : null)
-    this.setState({
-      list,
-      inputVal:clearVal
-    })
-  }
-  inputHandler (e) {
-    // 不参与渲染的变量可不使用state储存，提高性能
-    this.inputVal = e.target.value
-  }
 
 
-  delItem (index) {
-    let { list } = this.state
-    list.splice(index, 1)
-    this.setState({
-      list
-    })
-  }
 
   render () {
     let { list , inputVal} = this.state;
     return (
-      <View className='index'>
-        <Input className='input' type='text' value={inputVal} onInput={this.inputHandler.bind(this)} />
-        <Text className='add' onClick={this.addItem.bind(this)}>添加</Text>
-        <View className='list_wrap'>
-          <Text>Todo list</Text>
-          {
-            list.map((item, index) => {
-              return <View className='list'>
-                <Text>{index + 1}.{item}</Text>
-                <Text className='del' onClick={this.delItem.bind(this, index)}>删除</Text>
-              </View>
-            })
-          }
-        </View>
+      <View>
+        <IndexBar />
+        {/* <AtCalendar /> */}
+        {/* <AtCountdown className="count-down" isShowDay={265} minutes={1} seconds={10}/> */}
       </View>
     )
   }
